@@ -1,0 +1,30 @@
+<html lang="hr">
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <%- include("./partials/headerAndNav.ejs") %>
+        
+        <h2>Lista knjiga</h2>
+        <% if(lista.length > 0){ %>
+            <% lista.forEach(element => { %>
+                <div>
+                    <p>Naslov: <%= element.title %></p>
+                    <p>Autor: <%= element.author %></p>
+                    <p>Ocjena: <%= element.rating %></p>
+                    <p>
+                        <a href="/books/rate/<%= element._id %>">
+                            <img src="/rate.png" alt="Ikona ocjenivanja">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="/books/delete/<%= element._id %>">
+                            <img src="/trashcan.png" alt="Ikona brisanja">
+                        </a>
+                    </p>
+                </div>    
+            <% }); %>
+        <% } else{%>
+           <p>Trenutno ne postoji nijedna knjiga.</p> 
+        <% } %>
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>

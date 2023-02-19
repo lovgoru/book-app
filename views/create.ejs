@@ -1,0 +1,38 @@
+<html lang="hr">
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <%- include("./partials/headerAndNav.ejs") %>
+
+        <h2>Unesite podatke o knjizi</h2>
+        <div>
+            <form action="/books" method="post">
+                <label for="title">Naslov:</label><br>
+                <input type="text" name="title" required><br><br>
+    
+                <label for="author">Autor:</label><br>
+                <input type="text" name="author" required><br><br>
+                
+                <label for="rating">Ocjena:</label><br>
+                
+                <label>1</label>
+                <input type="radio" name="rating" value="1">
+    
+                <label>2</label>
+                <input type="radio" name="rating" value="2"><br>
+    
+                <label>3</label>
+                <input type="radio" name="rating" value="3" checked>
+    
+                <label>4</label>
+                <input type="radio" name="rating" value="4"><br>
+    
+                <label>5</label>
+                <input type="radio" name="rating" value="5"><br><br>
+             
+                <button>Unesi</button>
+            </form>
+        </div>
+        
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>

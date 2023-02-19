@@ -1,0 +1,22 @@
+<html lang="hr">
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <%- include("./partials/headerAndNav.ejs") %>
+
+        <h2>Početna stranica</h2>
+        <article>
+            <p>Ovo je web stranica koja služi za pohranjivanje i ocjenjivanje knjiga.</p>
+            <p>Trenutno se nalazite na početnoj stranici na kojoj se nalaze informacije o korištenju web stranice.</p>
+            <p>
+                Klikom na <i>Lista knjiga</i> u navigacijskom izborniku prikazat će se sve dosad pohranjene knjige. 
+                Uz naslov knjige i autora, prikazuje se još i ocjena knjige. Klikom na odgovarajuće ikone uz pojedinu knjigu, 
+                moguće je ocijeniti knjigu ocjenom od 1 do 5 ili obrisati knjigu.
+            </p>
+            <p>
+                Postoji mogućnost dodavanja nove knjige, koja se postiže klikom na <i>Dodaj novu knjigu</i> te unosom podataka 
+                o knjizi (ime autora i naslov knjige) i inicijalnom ocjenom od 1 do 5.
+            </p>
+        </article>
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>
