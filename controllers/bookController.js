@@ -2,7 +2,7 @@ const Book = require('../models/book');
 
 const book_list = (req, res) =>{
 
-    Book.find().sort({createdAt: -1})
+    Book.find().sort({rating: -1})
         .then(result =>{
             res.render('books', {lista: result});
         })
