@@ -6,13 +6,13 @@
         <h2>Ocijeni knjigu</h2>
 
         <h3>Podaci o knjizi</h3>
-        <div>
+        <div class="basic-div">
             <p>Naslov: <%= book.title %></p>
             <p>Autor: <%= book.author %></p>
             <p>Trenutna ocjena: <%= book.rating %></p>
         </div>
         <h3>Odaberi ocjenu za knjigu "<%= book.title %>"</h3>
-        <div>
+        <div class="basic-div">
             <form action="/books/rate/<%= book._id %>" method="post">
                 <label for="rating">Ocjena:</label><br>
                 
@@ -20,17 +20,17 @@
                 <input type="radio" name="rating" value="1">
     
                 <label>2</label>
-                <input type="radio" name="rating" value="2"><br>
+                <input type="radio" name="rating" value="2">
     
                 <label>3</label>
                 <input type="radio" name="rating" value="3" checked>
     
                 <label>4</label>
-                <input type="radio" name="rating" value="4"><br>
+                <input type="radio" name="rating" value="4">
     
                 <label>5</label>
-                <input type="radio" name="rating" value="5"><br>
-                <button>Unesi</button>
+                <input type="radio" name="rating" value="5">
+                <button class="button-75" role="button"><span class="text">Unesi</span></button>
             </form>
         </div>
         <%- include("./partials/footer.ejs") %>

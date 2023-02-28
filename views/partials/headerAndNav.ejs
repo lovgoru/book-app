@@ -7,6 +7,17 @@
         <li><a href="/">Početna stranica</a></li>
         <li><a href="/books">Lista knjiga</a></li>
         <li><a href="/books/create">Dodaj novu knjigu</a></li>
+        <% if(logged){ %>
+            <li>
+                <form action="/logout" method="POST">
+                    <button type="submit" class="logout-button">Odjava</button>
+                </form>
+            </li>
+        <% } else{%>
+            <li><a href="/login">Prijava</a></li>
+            <li><a href="/register">Registracija</a></li>
+        <% } %>
+        
     </ul>
 </nav>
 <hr>

@@ -1,0 +1,22 @@
+<html lang="hr">
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <%- include("./partials/headerAndNav.ejs") %>
+        
+        <div class="register-login-block">
+          <% if(messages.error){ %>
+            <h4 class="error-message"><%= messages.error %></h4>
+          <% } %>
+          <h2>Prijavi se</h2>
+          <form action="/login" method="POST">
+            <input type="text" value="" placeholder="Korisničko ime" id="username" name="username" autofocus required/>
+            <input type="password" value="" placeholder="Lozinka" id="password" name="password" required/>
+            <button type="submit">Prijava</button>
+          </form>
+          <p>Nemate korisnički račun?</p>
+          <p><a class="reg-link" href="/register"><u>Registriraj se</u></a></p>
+        </div>
+
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>

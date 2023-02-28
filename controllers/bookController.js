@@ -4,7 +4,7 @@ const book_list = (req, res) =>{
 
     Book.find().sort({rating: -1})
         .then(result =>{
-            res.render('books', {lista: result});
+            res.render('books', {lista: result, logged: req.isAuthenticated()});
         })
         .catch(err =>{
             console.log(err);
@@ -13,7 +13,7 @@ const book_list = (req, res) =>{
 }
 
 const book_create_get = (req, res) =>{
-    res.render('create');
+    res.render('create', {logged: req.isAuthenticated()});
 }
 
 const book_create_post = (req, res) =>{
@@ -41,7 +41,7 @@ const book_delete = (req, res) =>{
 const book_rate_get = (req, res) =>{
     Book.findById(req.params.id)
         .then(result =>{
-            res.render('rate', {book: result});
+            res.render('rate', {book: result, logged: req.isAuthenticated()});
         })
         .catch(err =>{
             console.log(err);
@@ -69,6 +69,7 @@ const book_rate_post = (req, res) =>{
         })
     
 }
+
 
 module.exports = {
     book_list,

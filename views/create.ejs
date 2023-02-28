@@ -4,13 +4,11 @@
         <%- include("./partials/headerAndNav.ejs") %>
 
         <h2>Unesite podatke o knjizi</h2>
-        <div>
+        <div class="basic-div">
             <form action="/books" method="post">
-                <label for="title">Naslov:</label><br>
-                <input type="text" name="title" required><br><br>
+                <input type="text" name="title" required autofocus placeholder="Naslov" class="input-text"><br><br>
     
-                <label for="author">Autor:</label><br>
-                <input type="text" name="author" required><br><br>
+                <input type="text" name="author" required placeholder="Autor" class="input-text"><br><br>
                 
                 <label for="rating">Ocjena:</label><br>
                 
@@ -18,18 +16,18 @@
                 <input type="radio" name="rating" value="1">
     
                 <label>2</label>
-                <input type="radio" name="rating" value="2"><br>
+                <input type="radio" name="rating" value="2">
     
                 <label>3</label>
                 <input type="radio" name="rating" value="3" checked>
     
                 <label>4</label>
-                <input type="radio" name="rating" value="4"><br>
+                <input type="radio" name="rating" value="4">
     
                 <label>5</label>
                 <input type="radio" name="rating" value="5"><br><br>
              
-                <button>Unesi</button>
+                <button class="button-75" role="button"><span class="text">Unesi</span></button>
             </form>
         </div>
         
