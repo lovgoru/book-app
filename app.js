@@ -19,8 +19,7 @@ const app = express();
 // Povezivanje s bazom podataka
 
 mongoose.set('strictQuery', true);
-const dbURI = "mongodb+srv://lovgoru:BgHrwA85RVca3p5S@cluster0.2q5fats.mongodb.net/book-app?retryWrites=true&w=majority";
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(result => app.listen(3000))
     .catch(err => console.log(err));
 
@@ -81,11 +80,4 @@ function checkAuthenticated(req, res, next) {
     }
   
     res.redirect('/login');
-  }
-
-  function checkNotAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-      return res.redirect('/')
-    }
-    next()
   }
