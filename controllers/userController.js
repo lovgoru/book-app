@@ -6,43 +6,28 @@ const register_get = (req, res) =>{
     res.render('register', {logged: req.isAuthenticated()});
 }
 
-const register_post = (req, res) =>{
-    console.log(req.body.username);
-    User.findOne({username: req.body.username})
-        .then(result1 =>{
-            if(result1){
-                console.log('Vec postoji korisnik s tim korisnickim imenom');
-                req.flash('error', 'Korisnik s unesenim korisničkim imenom već postoji!');
-                res.redirect('/register');
-            }
-            else{
-                bcrypt.hash(req.body.password, 10)
-                    .then(result2 =>{
-                        const user = new User({
-                            username: req.body.username,
-                            password: result2
-                        });
-                        user.save()
-                            .then(result3 =>{
-                                res.redirect('/login');
-                            })
-                            .catch(err =>{
-                                console.log(err);
-                                req.flash('error', 'Greška! Pokušajte ponovno.');
-                                res.redirect('/register');
-                            });
-                    })
-                    .catch(err =>{
-                        console.log(err);
-                        res.redirect('/register');
-                    });
-            }
-        })
-        .catch(err =>{
-            console.log(err);
-            req.flash('error', 'Greška! Pokušajte ponovno.')
+const register_post = async (req, res) =>{
+    try {
+        const user = await User.findOne({username: req.body.username});
+        if(user){
+            console.log('Vec postoji korisnik s tim korisnickim imenom');
+            req.flash('error', 'Korisnik s unesenim korisničkim imenom već postoji!');
             res.redirect('/register');
+            return;
+        }
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const newUser = new User({
+            username: req.body.username,
+            password: hashedPassword
         });
+        await newUser.save();
+        res.redirect('/login');
+    } catch (err) {
+        console.log(err);
+        req.flash('error', 'Greška! Pokušajte ponovno.');
+        res.redirect('/register');
+    }
+
 }
 
 const login_get = (req, res) =>{
