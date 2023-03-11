@@ -21,5 +21,11 @@ Za pokretanje aplikacije potrebno je na računalu imati instaliran Node.js (mož
 1. Kloniranje repozitorija
 2. Pozicioniranje terminalom u direktoriju projekta
 3. Izvođenje naredbe "npm install"
-4. Izvođenje naredbe "node app.js"
-5. Otvaranje u proizvoljnom web pregledniku adrese "http://localhost:3000/"
+4. Kreiranje datoteke s nazivom ".env" u koju se upisuje sljedeće:
+
+SESSION_SECRET = (proizvoljni string)
+
+DB_URI = (link kojim se spaja na MongoDB bazu podataka)
+
+5. Izvođenje naredbe "node app.js"
+6. Otvaranje u proizvoljnom web pregledniku adrese "http://localhost:3000/"
