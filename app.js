@@ -69,7 +69,7 @@ app.get('/', (req, res) =>{
 app.use('/books', checkAuthenticated, bookRoutes);
 
 app.use((req, res) =>{
-    res.status(404).render('404');
+    res.status(404).render('404', {logged: true});
 });
 
 // Pomocne funkcije za provjeru je li korisnik autenticiran

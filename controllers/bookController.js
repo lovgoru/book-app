@@ -10,6 +10,16 @@ const book_list = async (req, res) =>{
     }
 }
 
+const book_details = async (req, res) =>{
+
+    try {
+        const result = await Book.findById(req.params.id);
+        res.render('details', {book: result, logged: req.isAuthenticated()});
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 const book_create_get = (req, res) =>{
     res.render('create', {logged: req.isAuthenticated()});
 }
@@ -39,28 +49,19 @@ const book_delete = async (req, res) =>{
     }
 }
 
-const book_rate_get = async (req, res) =>{
-    try {
-        const result = await Book.findById(req.params.id);
-        res.render('rate', {book: result, logged: req.isAuthenticated()});
-    } catch (err) {
-        console.log(err);
-    }
-}
-
 const book_rate_post = async (req, res) =>{
     try {
         const result = await Book.findById(req.params.id);
         const filter = {_id: req.params.id};
         const updateDoc = {
             $set: {
-            sumRatings: result.sumRatings + parseFloat(req.body.rating),
+            sumRatings: result.sumRatings + parseFloat(req.body.starButton),
             numRatings: result.numRatings + 1,
-            rating: ((result.sumRatings + parseFloat(req.body.rating))/(result.numRatings + 1)).toFixed(2)
+            rating: ((result.sumRatings + parseFloat(req.body.starButton))/(result.numRatings + 1)).toFixed(2)
             },
         };
         await Book.updateOne(filter, updateDoc);
-        res.redirect('/books/rate/' + req.params.id);
+        res.redirect('/books');
     } catch (err) {
         console.log(err);
     }
@@ -70,9 +71,9 @@ const book_rate_post = async (req, res) =>{
 
 module.exports = {
     book_list,
+    book_details,
     book_create_get,
     book_create_post,
     book_delete,
-    book_rate_get,
     book_rate_post
 }

@@ -1,0 +1,16 @@
+<html lang="hr">
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <%- include("./partials/headerAndNav.ejs") %>
+
+        <h2><%= book.author %>: <%= book.title %></h2>
+
+        <h3>Podaci o knjizi</h3>
+        <div class="basic-div">
+            <p>Naslov: <%= book.title %></p>
+            <p>Autor: <%= book.author %></p>
+            <p>Trenutna ocjena: <%= book.rating %></p>
+        </div>
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>

@@ -4,27 +4,36 @@
         <%- include("./partials/headerAndNav.ejs") %>
         
         <h2>Lista knjiga</h2>
-        <% if(lista.length > 0){ %>
+        <% if(lista.length > 0) { %>
             <% lista.forEach(element => { %>
+                <a href="/books/details/<%= element._id %>">
                 <div class="basic-div">
                     <p>Naslov: <%= element.title %></p>
                     <p>Autor: <%= element.author %></p>
                     <p>Ocjena: <%= element.rating %></p>
                     <p>
-                        <a href="/books/rate/<%= element._id %>">
-                            <img src="/rate.png" alt="Ikona ocjenivanja">
-                        </a>
+                        <form action="/books/rate/<%= element._id %>" method="post">
+                            <button id="<%= element._id %>" class="star-button" name="starButton" value="1"><img src="/white_star.png" alt="1"></button>
+                            <button id="<%= element._id %>" class="star-button" name="starButton" value="2"><img src="/white_star.png" alt="2"></button>
+                            <button id="<%= element._id %>" class="star-button" name="starButton" value="3"><img src="/white_star.png" alt="3"></button>
+                            <button id="<%= element._id %>" class="star-button" name="starButton" value="4"><img src="/white_star.png" alt="4"></button>
+                            <button id="<%= element._id %>" class="star-button" name="starButton" value="5"><img src="/white_star.png" alt="5"></button>
+                        </form>
                     </p>
                     <p>
                         <a href="/books/delete/<%= element._id %>">
                             <img src="/trashcan.png" alt="Ikona brisanja">
                         </a>
                     </p>
-                </div>    
+                </div>
+                </a>    
             <% }); %>
-        <% } else{%>
+        <% } else { %>
            <p>Trenutno ne postoji nijedna knjiga.</p> 
         <% } %>
+
+        <script src="index.js"></script>
+
         <%- include("./partials/footer.ejs") %>
     </body>
 </html>
