@@ -63,14 +63,14 @@ article{
 }
 
 .basic-div{
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     margin-top: 3em;
     border-radius: 25px;
     text-align: center;
     background-color: #00FFFF;
     color: black;
-    padding: 0.5em;
+    padding: 2em;
 }
 
 img{
@@ -95,7 +95,7 @@ footer{
 /* dizajn za register i login stranice preuzet s http://jsfiddle.net/erikasaves/8p1weyud/2/ */ 
 
 .register-login-block {
-    width: 320px;
+    max-width: 320px;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -164,6 +164,7 @@ footer{
     outline: none;
     cursor: pointer;
 }
+
 
 .register-login-block button:hover {
     background: #00FFFF;
@@ -254,4 +255,27 @@ footer{
 
 button img {
     background-color: #00FFFF;
+}
+
+.legend-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.legend-label {
+    font-size: 14px;
 }

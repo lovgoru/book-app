@@ -10,7 +10,46 @@
             <p>Naslov: <%= book.title %></p>
             <p>Autor: <%= book.author %></p>
             <p>Trenutna ocjena: <%= book.rating %></p>
+        
+            <canvas id="statistics-chart" style="font-size: 5;"></canvas>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+            </script>
+            <script>
+                var rating_numbers = [
+                    parseInt("<%= book.numOnes %>"),
+                    parseInt("<%= book.numTwos %>"),
+                    parseInt("<%= book.numThrees %>"),
+                    parseInt("<%= book.numFours %>"),
+                    parseInt("<%= book.numFives %>")
+            ];
+            </script>
+            <script type="text/javascript" src="/javascript/statistics.js"></script>
+            <div class="legend-container">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: red;"></div>
+                    <div class="legend-label">Ocjena 1</div><br>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: green;"></div>
+                    <div class="legend-label">Ocjena 2</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: blue;"></div>
+                    <div class="legend-label">Ocjena 3</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: orange;"></div>
+                    <div class="legend-label">Ocjena 4</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: brown;"></div>
+                    <div class="legend-label">Ocjena 5</div>
+                </div>
+            </div>
         </div>
+        
+        
         <%- include("./partials/footer.ejs") %>
     </body>
 </html>
