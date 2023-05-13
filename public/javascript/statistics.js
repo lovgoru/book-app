@@ -1,8 +1,6 @@
 var xValues = ["Ocjena 1", "Ocjena 2", "Ocjena 3", "Ocjena 4", "Ocjena 5"];
 var barColors = ["red", "green", "blue", "orange", "brown"];
 
-console.log(rating_numbers);
-
 new Chart("statistics-chart", {
   type: "doughnut",
   data: {

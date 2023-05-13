@@ -279,3 +279,14 @@ button img {
 .legend-label {
     font-size: 14px;
 }
+
+#filter-input {
+    text-align: center;
+    width: 75%;
+}
+
+.input-div {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}

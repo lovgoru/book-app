@@ -2,7 +2,7 @@ const Book = require("../models/book");
 
 const book_list = async (req, res) => {
   try {
-    const result = await Book.find().sort({ rating: -1 });
+    let result = await Book.find().sort({ rating: -1 });
     res.render("books", { lista: result, logged: req.isAuthenticated() });
   } catch (err) {
     console.log(err);

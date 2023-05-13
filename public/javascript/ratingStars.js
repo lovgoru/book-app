@@ -2,8 +2,6 @@ const listButtons = [].slice.call(
   document.getElementsByClassName("star-button")
 );
 
-console.log(listButtons);
-
 listButtons.forEach((button) => {
   button.addEventListener("mouseenter", () => {
     for (btn of listButtons) {
