@@ -3,7 +3,7 @@ const Book = require("../models/book");
 const book_list = async (req, res) => {
   try {
     let result = await Book.find().sort({ rating: -1 });
-    res.render("books", { lista: result, logged: req.isAuthenticated() });
+    res.render("books", { books: result, logged: req.isAuthenticated() });
   } catch (err) {
     console.log(err);
   }
@@ -11,14 +11,9 @@ const book_list = async (req, res) => {
 
 const book_details = async (req, res) => {
   try {
-    console.log(req.params.id);
     const result = await Book.findById(req.params.id);
 
-    if (!result) {
-      return res.status(404).render("404", { logged: true });
-    }
-
-    res.render("details", { book: result, logged: req.isAuthenticated() });
+    return result;
   } catch (err) {
     console.log(err);
   }
@@ -52,7 +47,6 @@ const book_create_post = async (req, res) => {
 
 const book_delete = async (req, res) => {
   try {
-    console.log(req.params.id);
     await Book.findByIdAndDelete(req.params.id);
     res.redirect("/books");
   } catch (err) {
@@ -62,7 +56,6 @@ const book_delete = async (req, res) => {
 
 const book_rate_post = async (req, res) => {
   try {
-    console.log(req.params.id);
     const result = await Book.findById(req.params.id);
     const filter = { _id: req.params.id };
     const updateDoc = {

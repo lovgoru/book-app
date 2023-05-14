@@ -6,11 +6,11 @@
         <h2>Lista knjiga</h2>
 
         
-        <% if(lista.length > 0) { %>
+        <% if(books.length > 0) { %>
             <div class="input-div">
                 <input type="text" id="filter-input" placeholder="Unesite ime knjige ili autora">
             </div>
-            <% lista.forEach(element => { %>
+            <% books.forEach(element => { %>
                 <a href="/books/details/<%= element._id %>">
                     <div class="basic-div">
                     <p>Naslov: <%= element.title %></p>

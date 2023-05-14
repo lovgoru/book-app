@@ -12,11 +12,13 @@ U aplikaciji je moguće:
 - pregledati sve već dodane knjige i detalje knjiga
 - ocijeniti knjigu
 - izbrisati knjigu
+- komentirati knjigu
+- pregledavati komentare o knjigama
 
 Jednostavni frontend dio implementiran je koristeći HTML i CSS, dok je za backend korišten programski jezik Javascript, u Node.js okruženju.
 Za spremanje podataka o knjigama i korisnicima korišten je MongoDB Atlas.
 
-U implementaciji se koriste Express.js, Passport.js (za autentikaciju korisnika), mongoose, flash ...
+U implementaciji se koriste Express.js, Passport.js (za autentikaciju korisnika), mongoose, flash, Chart.js ...
 
 ## Pokretanje aplikacije
 

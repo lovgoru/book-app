@@ -48,7 +48,26 @@
                 </div>
             </div>
         </div>
-        
+
+        <h3>Komentari</h3>
+        <div class="basic-div">
+            <form action="<%= '/books/details/' +  book._id  + '/comment' %>" method="post">
+                <textarea name="commentInput" cols="30" rows="5" placeholder="Napišite komentar" required></textarea>
+                <br>
+                <button>Objavi</button>
+            </form>
+            <% if (!comments) { %>
+                <p>Trenutno nema komentara za ovu knjigu.</p>
+            <% } else { 
+                comments.forEach((element) => { %>
+                    <div class="comment-div">
+                        <p class="comment-author"> <%= element.author %> </p>
+                        <p class="comment-date"> <%= element.date %> </p>
+                        <p class="comment-text"> <%= element.text %> </p>
+                    </div>
+                <% });
+            } %>
+        </div>
         
         <%- include("./partials/footer.ejs") %>
     </body>

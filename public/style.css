@@ -290,3 +290,20 @@ button img {
     margin: 0 auto;
     text-align: center;
 }
+
+
+.comment-div {
+    margin-top: 30px;
+    background-color: #48eff7;
+    border: #117f85 solid 0.5px;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-date {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 80%;
+}
