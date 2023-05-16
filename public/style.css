@@ -282,7 +282,7 @@ button img {
 
 #filter-input {
     text-align: center;
-    width: 75%;
+    width: 100%;
 }
 
 .input-div {
@@ -306,4 +306,8 @@ button img {
     font-weight: 100;
     font-style: italic;
     font-size: 80%;
+}
+
+.comment-textarea {
+    width: 100%;
 }

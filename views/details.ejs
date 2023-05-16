@@ -52,7 +52,7 @@
         <h3>Komentari</h3>
         <div class="basic-div">
             <form action="<%= '/books/details/' +  book._id  + '/comment' %>" method="post">
-                <textarea name="commentInput" cols="30" rows="5" placeholder="Napišite komentar" required></textarea>
+                <textarea class="comment-textarea" name="commentInput" rows="5" placeholder="Napišite komentar" required></textarea>
                 <br>
                 <button>Objavi</button>
             </form>
