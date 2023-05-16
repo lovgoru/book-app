@@ -1,6 +1,8 @@
 # book-app
 
 U ovom repozitoriju nalazi se web aplikacija koja služi za pohranu i ocjenjivanje knjiga.
+Web aplikaciji možete pristupiti klikom na sljedeći link: https://book-app-97q1.onrender.com/
+(NAPOMENA: ovaj link možda neće biti aktivan pa ju možete pokrenuti na vlastitom računalu, opis postupka je niže)
 
 ## O aplikaciji
 
@@ -22,7 +24,8 @@ U implementaciji se koriste Express.js, Passport.js (za autentikaciju korisnika)
 
 ## Pokretanje aplikacije
 
-Za pokretanje aplikacije potrebno je na računalu imati instaliran Node.js (može se preuzeti na https://nodejs.org/en/). Tada je postupak sljedeći:
+Aplikaciju možete pregledati u browseru klikom na gore navedeni link ili pokretanjem na vlastitom računalu.
+Za pokretanje aplikacije na računalu potrebno je imati instaliran Node.js (može se preuzeti na https://nodejs.org/en/). Tada je postupak sljedeći:
 
 1. Kloniranje repozitorija
 2. Pozicioniranje terminalom u direktoriju projekta
